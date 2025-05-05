@@ -9,3 +9,5 @@ numpy
 librosa
 matplotlib
 dotenv
+Flask
+python-dotenv
