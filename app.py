@@ -5,6 +5,10 @@ from image_model import predict_image
 from video_model import predict_video
 from audio_model import predict_audio
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
+PORT= os.getenv("PORT", 5000)
 
 app = Flask(__name__)
 CORS(app)  # Apply CORS correctly
@@ -48,4 +52,4 @@ def test():
     return jsonify({"message": "Server is running!"})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,PORT=PORT,host='0.0.0.0')
