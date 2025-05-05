@@ -52,4 +52,4 @@ def test():
     return jsonify({"message": "Server is running!"})
 
 if __name__ == "__main__":
-    app.run(debug=True,PORT=PORT,host='0.0.0.0')
+    app.run(debug=True)
