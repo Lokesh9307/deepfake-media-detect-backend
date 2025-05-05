@@ -18,6 +18,18 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    print("request.files:", request.files)
+    print("request.form:", request.form)
+
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+
+    media_type = request.form.get('type')  # image, video, audio
+    print("media_type received:", media_type)
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
 
