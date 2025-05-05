@@ -6,3 +6,5 @@ torchaudio
 pillow
 opencv-python
 numpy
+librosa
+matplotlib
