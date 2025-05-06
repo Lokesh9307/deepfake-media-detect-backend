@@ -12,6 +12,7 @@ PORT= os.getenv("PORT", 5000)
 
 app = Flask(__name__)
 CORS(app)  # Apply CORS correctly
+CORS(app, resources={r"/predict": {"origins": "*"}}, supports_credentials=True)
 
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
