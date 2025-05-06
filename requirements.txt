@@ -11,3 +11,4 @@ matplotlib
 dotenv
 Flask
 python-dotenv
+gunicorn
